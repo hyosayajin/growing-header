@@ -1,0 +1,11 @@
+// *** VARIBLES ***//
+
+@use "./variables.scss";
+
+// *** FLEX PRORETY ***//
+
+@mixin flex($justify: center, $align: center) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+}

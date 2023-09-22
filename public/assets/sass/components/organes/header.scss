@@ -1,0 +1,22 @@
+@use "../../tools/tools" as *;
+
+// ** RULES **//
+@layer basic {
+	.header {
+		display: flex;
+		align-items: center;
+		gap: calc($rem);
+	}
+
+	.growing-header {
+		width: 75vw;
+
+		margin: auto;
+
+		padding: 10vw;
+
+		border-radius: 4px;
+
+		background-color: rgba(0, 0, 0, 0.692);
+	}
+}

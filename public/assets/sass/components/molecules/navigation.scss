@@ -1,0 +1,92 @@
+@use "../../tools/tools" as *;
+
+// ** RULES **//
+
+@layer basic {
+	.header-navigation ul {
+		--color-white-hn: hsla(0, 0%, 100%, 0.2);
+
+		display: flex;
+		align-items: center;
+		gap: calc($rem * 2);
+
+		min-width: fit-content;
+		max-width: 1200px;
+
+		width: 75vw;
+
+		height: calc($rem * 3);
+
+		padding-left: calc($rem * 2);
+		padding-right: calc($rem * 2);
+
+		border-radius: 4px;
+
+		background-color: var(--color-glass);
+
+		outline: 1px solid transparent;
+
+		backdrop-filter: blur(15px);
+
+		// opacity: 0;
+
+		transition: 400ms linear;
+
+		&:hover {
+			filter: brightness(1.4) contrast(1.2);
+		}
+	}
+
+	.header-navigation li {
+		> a {
+			display: inline-block;
+
+			&::first-letter {
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.growing-header {
+		margin: auto;
+
+		padding: 10vw;
+
+		border-radius: 4px;
+
+		background-color: rgba(0, 0, 0, 0.692);
+
+		.header-navigation ul {
+			width: 0;
+
+			opacity: 0;
+
+			&.active {
+				width: 75vw;
+
+				padding-left: calc($rem * 2);
+				padding-right: calc($rem * 2);
+
+				border-color: var(--color-white);
+
+				opacity: 1;
+
+				li {
+					display: initial;
+				}
+			}
+		}
+
+		.header-navigation li {
+			display: none;
+
+			> a {
+				display: inline-block;
+
+				&::first-letter {
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
